@@ -94,7 +94,7 @@ var finalDetails = function(details) {
 		finalMovieDetails.push({
 			title: details[j].original_title,
 			overview: details[j].overview,
-			poster: "https://image.tmdb.org/t/p/w500/" + details[j].backdrop_path,
+			poster: "https://image.tmdb.org/t/p/w1000/" + details[j].backdrop_path,
 			release_date: details[j].release_date,
 			link: "https://www.themoviedb.org/movie/" + details[j].id
 		});
@@ -111,7 +111,6 @@ movieApp.displayMovies = function(displayItems) {
 	var template = Handlebars.compile(myTemplate);
 
 	displayItems.forEach(function(individualMovie) {
-		// console.log('hi')
 		var finalTemplate = template(individualMovie);
 		$("#results").append(finalTemplate);
 	});
